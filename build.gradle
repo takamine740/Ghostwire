@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.ghostwire'
+version = '0.1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'net.portswigger.burp.extensions:montoya-api:2026.7'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.release = 21
+    options.encoding = 'UTF-8'
+}
+
+// Single fat JAR: bundle runtime deps; Montoya is compileOnly and provided by Burp.
+tasks.named('jar', Jar) {
+    archiveBaseName = 'ghostwire'
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    exclude 'META-INF/*.SF', 'META-INF/*.DSA', 'META-INF/*.RSA', 'META-INF/versions/*/module-info.class', 'module-info.class'
+}
