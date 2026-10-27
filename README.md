@@ -16,8 +16,6 @@ In Burp, open **Extensions → Installed → Add**, set the extension type to **
 
 ## Guide
 
-Open one function at a time.
-
 ### Settings and connection
 
 Settings stores the connection to the model and the text that each function sends. The API key is kept in Burp's user preferences on this machine. It is not written into the project file.
