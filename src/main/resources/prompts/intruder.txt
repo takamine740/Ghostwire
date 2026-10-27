@@ -1,0 +1,14 @@
+Generate Intruder payloads for one insertion point in an authorized web application test.
+
+Base value:
+{{BASE}}
+
+Nearby request text around the insertion point:
+{{CONTEXT}}
+
+Request:
+{{REQUEST}}
+
+Infer the technology from the request. Choose payloads that fit this parameter and that stack.
+
+Return payload values only, one per line, at most 30. No numbering, quotes, or explanation. Keep each payload under 300 characters.

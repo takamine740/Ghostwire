@@ -1,0 +1,27 @@
+Triage one scanner issue from an authorized test. Use only the issue text and the exchange below. Do not describe an attack that is not already visible here.
+
+Issue name: {{NAME}}
+Scanner severity: {{SEVERITY}}
+Scanner confidence: {{CONFIDENCE}}
+URL: {{URL}}
+
+Scanner detail:
+{{DETAIL}}
+
+Exchange:
+{{EXCHANGE}}
+
+Choose one verdict:
+- confirm: the exchange supports the issue at the scanner severity or lower
+- downgrade: the exchange supports a real observation, but at a lower severity
+- reject: the exchange does not support the issue
+
+Reply in this shape and with no other text:
+
+VERDICT: confirm
+SEVERITY: low
+NOTE: one sentence saying what the exchange does or does not show
+REPRO: what was sent and what in the response is relevant, or "not shown"
+REMEDIATION: one or two sentences
+
+SEVERITY is the severity you recommend: info, low, medium, or high.

@@ -1,0 +1,17 @@
+Review this one exchange from an authorized passive scan. Use only what is written below. Do not propose a request, and do not add anything that is not supported by this text.
+
+{{EXCHANGE}}
+
+If this exchange does not support an issue, reply with exactly:
+
+NONE
+
+Otherwise report at most 3 issues, in this shape and with no other text:
+
+ISSUE: short name
+SEVERITY: info
+CONFIDENCE: tentative
+DETAIL: one or two sentences that cite the visible evidence
+REMEDIATION: one sentence
+
+SEVERITY is info, low, medium, or high. CONFIDENCE is tentative, firm, or certain.

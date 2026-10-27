@@ -1,0 +1,77 @@
+{
+  "headers": [
+    {"header": "server", "pattern": "(?i)\\bnginx(?:/([0-9][\\d.]*))?", "versionGroup": 1, "product": "nginx", "category": "server", "purl": "pkg:generic/nginx@{version}"},
+    {"header": "server", "pattern": "(?i)^(?!.*coyote).*\\bapache(?:/([0-9][\\d.]*))?", "versionGroup": 1, "product": "Apache", "category": "server", "purl": "pkg:generic/apache@{version}"},
+    {"header": "server", "pattern": "(?i)coyote(?:/([0-9][\\d.]*))?", "versionGroup": 1, "product": "Apache Tomcat", "category": "server", "purl": "pkg:maven/org.apache.tomcat/tomcat@{version}"},
+    {"header": "server", "pattern": "(?i)\\bmicrosoft-iis(?:/([0-9][\\d.]*))?", "versionGroup": 1, "product": "IIS", "category": "server", "purl": "pkg:generic/microsoft-iis@{version}"},
+    {"header": "server", "pattern": "(?i)\\blitespeed(?:/([0-9][\\d.]*))?", "versionGroup": 1, "product": "LiteSpeed", "category": "server", "purl": "pkg:generic/litespeed@{version}"},
+    {"header": "server", "pattern": "(?i)\\bopenresty(?:/([0-9][\\d.]*))?", "versionGroup": 1, "product": "OpenResty", "category": "server", "purl": "pkg:generic/openresty@{version}"},
+    {"header": "server", "pattern": "(?i)\\bcloudflare\\b", "product": "Cloudflare", "category": "cdn"},
+    {"header": "server", "pattern": "(?i)amazons3", "product": "Amazon S3", "category": "service"},
+    {"header": "x-powered-by", "pattern": "(?i)\\bphp(?:/([0-9][\\d.]*))?", "versionGroup": 1, "product": "PHP", "category": "language", "purl": "pkg:generic/php@{version}"},
+    {"header": "x-powered-by", "pattern": "(?i)\\basp\\.net(?:/([0-9][\\d.]*))?", "versionGroup": 1, "product": "ASP.NET", "category": "framework", "purl": "pkg:generic/asp.net@{version}"},
+    {"header": "x-powered-by", "pattern": "(?i)\\bexpress\\b", "product": "Express", "category": "framework"},
+    {"header": "x-powered-by", "pattern": "(?i)\\bnext\\.js\\b", "product": "Next.js", "category": "framework"},
+    {"header": "server", "pattern": "(?i)\\bgunicorn(?:/([0-9][\\d.]*))?", "versionGroup": 1, "product": "gunicorn", "category": "server", "purl": "pkg:pypi/gunicorn@{version}"},
+    {"header": "server", "pattern": "(?i)\\bwerkzeug(?:/([0-9][\\d.]*))?", "versionGroup": 1, "product": "Werkzeug", "category": "framework", "purl": "pkg:pypi/werkzeug@{version}"},
+    {"header": "server", "pattern": "(?i)\\bkestrel\\b", "product": "Kestrel", "category": "server"},
+    {"header": "x-aspnet-version", "pattern": "([0-9][\\d.]*)", "versionGroup": 1, "product": "ASP.NET", "category": "framework", "purl": "pkg:generic/asp.net@{version}"},
+    {"header": "x-aspnetmvc-version", "pattern": "([0-9][\\d.]*)", "versionGroup": 1, "product": "ASP.NET MVC", "category": "framework", "purl": "pkg:generic/asp.net-mvc@{version}"},
+    {"header": "x-generator", "pattern": "(?i)wordpress\\s+([0-9]+\\.[0-9]+(?:\\.[0-9]+)?)", "versionGroup": 1, "product": "WordPress", "category": "application", "purl": "pkg:generic/wordpress@{version}"},
+    {"header": "x-generator", "pattern": "(?i)drupal\\s+([0-9]+(?:\\.[0-9]+)*)", "versionGroup": 1, "product": "Drupal", "category": "application", "purl": "pkg:generic/drupal@{version}"},
+    {"headerPattern": "(?i)^x-magento", "product": "Magento", "category": "application"},
+    {"headerPattern": "(?i)^x-shopify", "product": "Shopify", "category": "application"},
+    {"header": "cf-ray", "product": "Cloudflare", "category": "cdn"},
+    {"header": "cf-cache-status", "product": "Cloudflare", "category": "cdn"},
+    {"header": "x-amz-cf-id", "product": "Amazon CloudFront", "category": "cdn"},
+    {"header": "x-amz-cf-pop", "product": "Amazon CloudFront", "category": "cdn"},
+    {"header": "x-varnish", "product": "Varnish", "category": "cdn"},
+    {"header": "x-akamai-transformed", "product": "Akamai", "category": "cdn"},
+    {"header": "akamai-cache-status", "product": "Akamai", "category": "cdn"},
+    {"header": "x-fastly-request-id", "product": "Fastly", "category": "cdn"},
+    {"header": "fastly-restarts", "product": "Fastly", "category": "cdn"},
+    {"header": "x-arequestid", "product": "Atlassian", "category": "application"},
+    {"header": "x-ausername", "product": "Atlassian", "category": "application"},
+    {"header": "x-asen", "product": "Atlassian", "category": "application"}
+  ],
+  "cookies": [
+    {"pattern": "(?i)^PHPSESSID$", "product": "PHP", "category": "language"},
+    {"pattern": "(?i)^JSESSIONID$", "product": "Java", "category": "language"},
+    {"pattern": "(?i)^ASP\\.NET_SessionId$", "product": "ASP.NET", "category": "framework"},
+    {"pattern": "(?i)^csrftoken$", "product": "Django", "category": "framework"},
+    {"pattern": "(?i)^AWSALB(CORS)?$", "product": "AWS ALB", "category": "service"},
+    {"pattern": "(?i)^wp-|^wordpress_test_cookie$", "product": "WordPress", "category": "application"},
+    {"pattern": "(?i)^atlassian\\.xsrf\\.token$|^seraph\\.rememberme$", "product": "Atlassian", "category": "application"}
+  ],
+  "paths": [
+    {"contains": "/wp-content/", "product": "WordPress", "category": "application"},
+    {"contains": "/wp-includes/", "product": "WordPress", "category": "application"},
+    {"contains": "/wp-json", "product": "WordPress", "category": "application"},
+    {"contains": "/_next/", "product": "Next.js", "category": "framework"},
+    {"contains": "/sites/default/", "product": "Drupal", "category": "application"}
+  ],
+  "metas": [
+    {"name": "ajs-version-number", "contentIsVersion": true, "requires": "com.atlassian.jira", "product": "Jira", "category": "application", "purl": "pkg:maven/com.atlassian.jira/jira-core@{version}", "replaces": "Atlassian"},
+    {"name": "ajs-version-number", "contentIsVersion": true, "requires": "jira-webresources", "product": "Jira", "category": "application", "purl": "pkg:maven/com.atlassian.jira/jira-core@{version}", "replaces": "Atlassian"},
+    {"name": "ajs-version-number", "contentIsVersion": true, "requires": "com.atlassian.confluence", "product": "Confluence", "category": "application", "purl": "pkg:maven/com.atlassian.confluence/confluence@{version}", "replaces": "Atlassian"},
+    {"name": "ajs-version-number", "contentIsVersion": true, "product": "Atlassian", "category": "application"},
+    {"name": "generator", "contentPattern": "(?i)WordPress\\s+([0-9]+\\.[0-9]+(?:\\.[0-9]+)?)", "versionGroup": 1, "product": "WordPress", "category": "application", "purl": "pkg:generic/wordpress@{version}"},
+    {"name": "generator", "contentPattern": "(?i)Drupal\\s+([0-9]+(?:\\.[0-9]+)*)", "versionGroup": 1, "product": "Drupal", "category": "application", "purl": "pkg:generic/drupal@{version}"},
+    {"name": "generator", "contentPattern": "(?i)WordPress", "product": "WordPress", "category": "application"},
+    {"name": "generator", "contentPattern": "(?i)Drupal", "product": "Drupal", "category": "application"}
+  ],
+  "pages": [
+    {"pattern": "(?i)\\bng-version\\s*=\\s*[\"']([0-9][^\"']*)", "versionGroup": 1, "product": "Angular", "category": "framework", "purl": "pkg:npm/@angular/core@{version}"},
+    {"pattern": "(?i)\\bdata-reactroot\\b", "product": "React", "category": "library"},
+    {"pattern": "__NEXT_DATA__", "product": "Next.js", "category": "framework"}
+  ],
+  "assets": [
+    {"pathPattern": "(?i)(?:^|[/\\\\._-])jquery(?:\\.min|\\.slim)?(?:\\.js)?(?:-[0-9]|\\.js|$)", "versionPattern": "(?i)jquery[.-]([0-9]+\\.[0-9]+\\.[0-9]+)|(?:^|[?&])ver=([0-9]+\\.[0-9]+(?:\\.[0-9]+)?)", "product": "jQuery", "category": "library", "purl": "pkg:npm/jquery@{version}"},
+    {"pathPattern": "(?i)(?:^|[/\\\\._-])bootstrap(?:\\.min|\\.bundle)?(?:\\.css|\\.js)?(?:-[0-9]|\\.css|\\.js|$)", "versionPattern": "(?i)bootstrap[.-]([0-9]+\\.[0-9]+\\.[0-9]+)|(?:^|[?&])ver=([0-9]+\\.[0-9]+(?:\\.[0-9]+)?)", "product": "Bootstrap", "category": "library", "purl": "pkg:npm/bootstrap@{version}"},
+    {"pathPattern": "(?i)react-dom(?:\\.production)?(?:\\.min)?\\.js", "versionPattern": "(?i)react-dom[.-]([0-9]+\\.[0-9]+\\.[0-9]+)|(?:^|[?&])ver=([0-9]+\\.[0-9]+(?:\\.[0-9]+)?)", "product": "React", "category": "library", "purl": "pkg:npm/react-dom@{version}"},
+    {"pathPattern": "(?i)(?:^|[/\\\\._-])vue(?:\\.runtime)?(?:\\.global)?(?:\\.min)?\\.js", "versionPattern": "(?i)vue[.-]([0-9]+\\.[0-9]+\\.[0-9]+)|(?:^|[?&])ver=([0-9]+\\.[0-9]+(?:\\.[0-9]+)?)", "product": "Vue", "category": "library", "purl": "pkg:npm/vue@{version}"},
+    {"pathPattern": "(?i)(?:^|[/\\\\._-])angular(?:\\.min)?\\.js", "versionPattern": "(?i)angular[.-]([0-9]+\\.[0-9]+\\.[0-9]+)|(?:^|[?&])ver=([0-9]+\\.[0-9]+(?:\\.[0-9]+)?)", "product": "AngularJS", "category": "framework", "purl": "pkg:npm/angular@{version}"},
+    {"pathPattern": "(?i)(?:^|[/\\\\._-])lodash(?:\\.min)?\\.js", "versionPattern": "(?i)lodash[.-]([0-9]+\\.[0-9]+\\.[0-9]+)|(?:^|[?&])ver=([0-9]+\\.[0-9]+(?:\\.[0-9]+)?)", "product": "Lodash", "category": "library", "purl": "pkg:npm/lodash@{version}"},
+    {"pathPattern": "(?i)cdn\\.shopify\\.com", "product": "Shopify", "category": "application"}
+  ]
+}

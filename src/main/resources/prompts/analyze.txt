@@ -1,0 +1,12 @@
+Analyze the HTTP exchange below for security issues a penetration tester should follow up.
+
+Cover:
+- What the request is doing
+- Inputs that look attacker-controllable
+- Concrete weaknesses supported by this traffic, each with impact and Repeater reproduction steps
+- What is only a suspicion, and the next request that would confirm it
+
+If the exchange looks benign, say so and name what you would test next.
+
+HTTP exchange:
+{{EXCHANGE}}

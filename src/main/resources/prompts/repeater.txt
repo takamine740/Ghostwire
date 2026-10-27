@@ -1,0 +1,25 @@
+Choose the next single HTTP request in this authorized Repeater session, or stop.
+
+Current exchange:
+{{EXCHANGE}}
+
+Steps already taken:
+{{HISTORY}}
+
+Rules:
+- Stay on the same scheme, host, and port as the current request.
+- Propose one change that would confirm or refute something already visible in this exchange.
+- Prefer GET, HEAD, or OPTIONS. Use another method only when the exchange already shows the application expects it.
+- If nothing further would help, stop.
+
+Reply in exactly this shape, with no other text:
+
+ACTION: send
+REASON: one sentence
+REQUEST:
+<the raw HTTP request, headers included, blank line before any body>
+
+or:
+
+ACTION: done
+REASON: one sentence
